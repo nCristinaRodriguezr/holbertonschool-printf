@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 {
 	int i = 0;
 	char *str;
+	char *esp;
 	va_list arguments;
 	char *(*f)(va_list, char *);
 
@@ -26,7 +27,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			printf("entro al %");
-			f = get_data({format[i + 1], '\0'});
+			esp = {format[i + 1], '\0'};
+			f = get_data(esp);
 			if (f == NULL)
 			{
 				str[strlen(str) + 1] = '\0';
