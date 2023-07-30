@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	va_start(arguments, format);
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[i] == "%")
 		{
 			printf("entro al %");
 			esp[0] = format[i + 1];
