@@ -21,10 +21,12 @@ int _printf(const char *format, ...)
 		return (0);
 	str[0] = '\0';
 	va_start(arguments, format);
+	printf("todo inicializado")
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
+			printf("entro al %")
 			esp[0] = format[i + 1];
 			f = get_data(esp);
 			if (f == NULL)
@@ -34,6 +36,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
+				printf("entro al else")
 				str[strlen(str) + 1] = '\0';
 				str = f(arguments, str);
 				i++;
