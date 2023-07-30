@@ -36,6 +36,7 @@ void get_data(const char *format, va_list arguments, char *str)
 					f(arguments, str);
 					flag = 1;
 					i++;
+					break;
 				}
 				j++;
 			}
