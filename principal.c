@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 	va_list arguments;
 	char *(*f)(va_list, char *);
 
+	printf("todo inicializado antes de malloc");
 	str = malloc(1024 * sizeof(char));
 	if (str == NULL)
 		return (0);
