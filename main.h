@@ -9,10 +9,10 @@
 typedef struct functions
 {
 	char *datatype;
-	char *(*f)(va_list arguments, char *str);
+	void (*f)(va_list arguments, char *str);
 } fun;
 int _printf(const char *format, ...);
-char *(*get_data(char *s))(va_list arguments, char *str);
-char *datac(va_list arguments, char *str);
-char *datas(va_list arguments, char *str);
+void get_data(const char *format, va_list arguments, char *str);
+void datac(va_list arguments, char *str);
+void datas(va_list arguments, char *str);
 #endif
