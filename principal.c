@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			printf("entro al %");
-			f = get_data(format[i + 1]);
+			f = get_data({format[i + 1], '\0'});
 			if (f == NULL)
 			{
 				str[strlen(str) + 1] = '\0';
