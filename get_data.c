@@ -18,12 +18,13 @@ void get_data(const char *format, va_list arguments, char *str)
 		{NULL, NULL}
 	};
 	int i = 0;
-	int j;
+	int j, flag;
 
 	void (*f)(va_list, char *);
 
 	while (format[i] != '\0')
 	{
+		flag = 0;
 		if (format[i] == '%')
 		{
 			j = 0;
@@ -33,9 +34,15 @@ void get_data(const char *format, va_list arguments, char *str)
 				{
 					f = datos[j].f;
 					f(arguments, str);
+					flag = 1;
 					i++;
 				}
 				j++;
+			}
+			if (flag == 0 && format[i + 1] != '\0')
+			{
+				str[strlen(str) + 1] = '\0';
+				str[strlen(str)] = format[i];
 			}
 			i++;
 		}
