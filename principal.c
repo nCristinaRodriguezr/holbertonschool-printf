@@ -16,8 +16,8 @@ int _printf(const char *format, ...)
 	va_list arguments;
 
 	str = malloc(10000 * sizeof(char));
-	if (str == NULL)
-		return (0);
+	if (str == NULL || format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
 	str[0] = '\0';
 	va_start(arguments, format);
 	get_data(format, arguments, str);
