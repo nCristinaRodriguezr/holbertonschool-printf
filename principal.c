@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	va_list arguments;
 	char *(*f)(va_list, char *);
 
-	str = malloc(50 * sizeof(char));
+	str = malloc(1024 * sizeof(char));
 	if (str == NULL)
 		return (0);
 	str[0] = '\0';
