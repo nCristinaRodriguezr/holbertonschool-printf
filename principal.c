@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	char *str;
 	char *esp = " ";
 	va_list arguments;
-	void (*f)(va_list, char *);
+	char *(*f)(va_list, char *);
 
 	str = malloc(50 * sizeof(char));
 	if (str == NULL)
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				str[strlen(str) + 1] = '\0';
-				f(arguments, str);
+				str = f(arguments, str);
 				i++;
 			}
 		}

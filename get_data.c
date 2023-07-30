@@ -7,7 +7,7 @@
  * @s: apuntar al simbolo del tipo de dato o especificador
  * Return: Devuelve NULL
  */
-void (*get_data(char *s))(va_list arguments, char *str)
+char *(*get_data(char *s))(va_list arguments, char *str)
 {
 	fun datos[] = {
 		{"c", datac},

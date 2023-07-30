@@ -5,18 +5,21 @@
  * datac- esta función guarda en el puntero str el tipo de dato c (char)
  * @arguments: lista de argumentos de la funcion principal
  * @str: puntero donde se guardara el caracter para imprimirlo luego
+ * Return: Devuelve el puntero str llenito
  */
-void datac(va_list arguments, char *str)
+char *datac(va_list arguments, char *str)
 {
 	str[strlen(str) + 1] = '\0';
 	str[strlen(str)] = va_arg(arguments, int);
+	return (str);
 }
 /**
  * datas- esta función guarda en el puntero str el tipo de dato s (puntero)
  * @arguments: lista de argumentos de la funcion principal
  * @str: puntero donde se guardara la cadena para imprimirla luego
+ * Return: Devuelve el puntero str llenito
  */
-void datas(va_list arguments, char *str)
+char *datas(va_list arguments, char *str)
 {
 	char *s;
 	int j = 0;
@@ -28,4 +31,5 @@ void datas(va_list arguments, char *str)
 		str[strlen(str)] = s[j];
 		j++;
 	}
+	return (str);
 }
