@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 {
 	int i = 0;
 	char *str;
-	char *esp;
+	char *esp = " ";
 	va_list arguments;
 	void (*f)(va_list, char *);
 
