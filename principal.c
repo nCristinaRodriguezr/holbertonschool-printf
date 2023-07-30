@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 /**
  * _printf- esta funcion imrpime una salida de acuerdo al formato c, s, d, i
  * @format: apuntar a el simbolo de la funcion
@@ -21,12 +22,12 @@ int _printf(const char *format, ...)
 		return (0);
 	str[0] = '\0';
 	va_start(arguments, format);
-	printf("todo inicializado")
+	printf("todo inicializado");
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			printf("entro al %")
+			printf("entro al %");
 			esp[0] = format[i + 1];
 			f = get_data(esp);
 			if (f == NULL)
@@ -36,7 +37,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				printf("entro al else")
+				printf("entro al else");
 				str[strlen(str) + 1] = '\0';
 				str = f(arguments, str);
 				i++;
