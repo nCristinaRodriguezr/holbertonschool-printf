@@ -17,13 +17,11 @@ int _printf(const char *format, ...)
 	va_list arguments;
 	char *(*f)(va_list, char *);
 
-	printf("todo inicializado antes de malloc");
 	str = malloc(1024 * sizeof(char));
 	if (str == NULL)
 		return (0);
 	str[0] = '\0';
 	va_start(arguments, format);
-	printf("todo inicializado");
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
