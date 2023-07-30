@@ -53,7 +53,7 @@ fun *get_struct(void)
 	static fun datos[] = {
 		{"c", datac},
 		{"s", datas},
-		{"%", datapercent},
+		{"%", datap},
 		{NULL, NULL}
 	};
 	return (datos);
