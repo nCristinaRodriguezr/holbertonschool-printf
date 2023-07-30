@@ -11,14 +11,8 @@
  */
 void get_data(const char *format, va_list arguments, char *str)
 {
-	fun datos[] = {
-		{"c", datac},
-		{"s", datas},
-		{"%", datap},
-		{NULL, NULL}
-	};
-	int i = 0;
-	int j, flag;
+	int j, flag, i = 0;
+	fun *datos;
 	void (*f)(va_list, char *);
 
 	while (format != NULL && format[i] != '\0')
@@ -40,17 +34,37 @@ void get_data(const char *format, va_list arguments, char *str)
 				j++;
 			}
 			if (flag == 0 && format[i + 1] != '\0')
-			{
-				str[strlen(str) + 1] = '\0';
-				str[strlen(str)] = format[i];
-			}
+				moverstr(str, format[i]);
 			i++;
 		}
 		else
 		{
-			str[strlen(str) + 1] = '\0';
-			str[strlen(str)] = format[i];
+			moverstr(str, format[i]);
 			i++;
 		}
 	}
+}
+/**
+ * get_struct- esta funcion devuelve la estructura con la funciones
+ * Return: Devuelve la estructura
+ */
+fun *get_struct(void)
+{
+	static fun datos[] = {
+		{"c", datac},
+		{"s", datas},
+		{"%", datapercent},
+		{NULL, NULL}
+	};
+	return (datos);
+}
+/**
+ * moverstr- esta funcion corre el nulo de str y añade un elemento
+ * @str: puntero que guarda lo que se imprimira luego
+ * @format: cadena original con la informacion
+ */
+void moverstr(char *str, char format)
+{
+	str[strlen(str) + 1] = '\0';
+	str[strlen(str)] = format;
 }
