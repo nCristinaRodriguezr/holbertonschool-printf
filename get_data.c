@@ -14,13 +14,13 @@ void get_data(const char *format, va_list arguments, char *str)
 	fun datos[] = {
 		{"c", datac},
 		{"s", datas},
-		{"%", datapercent},
+		{"%", datap},
 		{NULL, NULL}
 	};
 	int i = 0;
 	int j, flag;
-
 	void (*f)(va_list, char *);
+
 	while (format != NULL && format[i] != '\0')
 	{
 		flag = 0;

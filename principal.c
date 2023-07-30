@@ -22,6 +22,8 @@ int _printf(const char *format, ...)
 	va_start(arguments, format);
 	get_data(format, arguments, str);
 	i = strlen(str);
+	if (strlen(format) > 0 && i == 0)
+		i++;
 	write(1, str, i);
 	va_end(arguments);
 	free(str);
