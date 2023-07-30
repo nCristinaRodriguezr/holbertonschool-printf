@@ -21,8 +21,7 @@ void get_data(const char *format, va_list arguments, char *str)
 	int j, flag;
 
 	void (*f)(va_list, char *);
-
-	while (format[i] != '\0')
+	while (format != NULL && format[i] != '\0')
 	{
 		flag = 0;
 		if (format[i] == '%')
