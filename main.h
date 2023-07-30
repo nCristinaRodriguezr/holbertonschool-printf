@@ -15,6 +15,6 @@ int _printf(const char *format, ...);
 void get_data(const char *format, va_list arguments, char *str);
 void datac(va_list arguments, char *str);
 void datas(va_list arguments, char *str);
-void datapercent(va_list arguments __attribute__((unused)), char *str);
+void datap(va_list arguments __attribute__((unused)), char *str);
 #endif
 
