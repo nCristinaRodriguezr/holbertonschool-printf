@@ -22,6 +22,10 @@ void datas(va_list arguments, char *str)
 	int j = 0;
 
 	s = va_arg(arguments, char *);
+	if (s == NULL)
+	{
+		s ="(null)";
+	}
 	while (s[j] != '\0')
 	{
 		str[strlen(str) + 1] = '\0';
