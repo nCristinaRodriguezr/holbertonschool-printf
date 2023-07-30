@@ -24,7 +24,7 @@ void datas(va_list arguments, char *str)
 	s = va_arg(arguments, char *);
 	if (s == NULL)
 	{
-		s ="(null)";
+		s = "(null)";
 	}
 	while (s[j] != '\0')
 	{
@@ -32,4 +32,14 @@ void datas(va_list arguments, char *str)
 		str[strlen(str)] = s[j];
 		j++;
 	}
+}
+ /**
+  * datapercent- esta función reemplaza dos pocentajes por uno solo
+  * @va_list: lista de argumentos de la funcion principal
+  * @str: puntero donde se guardara la cadena para imprimirla luego
+  */
+void datapercent(va_list arguments __attribute__((unused)), char *str)
+{
+	str[strlen(str) + 1] = '\0';
+	str[strlen(str)] = '%';
 }

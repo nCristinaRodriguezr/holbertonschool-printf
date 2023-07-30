@@ -14,6 +14,7 @@ void get_data(const char *format, va_list arguments, char *str)
 	fun datos[] = {
 		{"c", datac},
 		{"s", datas},
+		{"%", datapercent},
 		{NULL, NULL}
 	};
 	int i = 0;
