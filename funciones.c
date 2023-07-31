@@ -33,11 +33,11 @@ void datas(va_list arguments, char *str)
 		j++;
 	}
 }
- /**
-  * datap- esta función reemplaza dos pocentajes por uno solo
-  * @arguments: lista de argumentos de la funcion principal
-  * @str: puntero donde se guardara la cadena para imprimirla luego
-  */
+/**
+ * datap- esta función reemplaza dos pocentajes por uno solo
+ * @arguments: lista de argumentos de la funcion principal
+ * @str: puntero donde se guardara la cadena para imprimirla luego
+ */
 void datap(va_list arguments __attribute__((unused)), char *str)
 {
 	str[strlen(str) + 1] = '\0';
