@@ -21,6 +21,7 @@ void get_data(const char *format, va_list arguments, char *str)
 		if (format[i] == '%')
 		{
 			j = 0;
+			datos = get_struct();
 			while (datos[j].datatype != NULL)
 			{
 				if (format[i + 1] == *datos[j].datatype)
