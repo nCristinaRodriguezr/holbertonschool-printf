@@ -43,3 +43,38 @@ void datap(va_list arguments __attribute__((unused)), char *str)
 	str[strlen(str) + 1] = '\0';
 	str[strlen(str)] = '%';
 }
+/**
+ * data_d_i- esta función guarda en str el tipo el espcificar d, i
+ * @arguments: lista de argumentos de la funcion principal
+ * @str: puntero donde se guardara la cadena para imprimirla luego
+ */
+void data_d_i(va_list arguments, char *str)
+{
+	int n = va_arg(arguments, int);
+
+	itoa(n, str);
+}
+/**
+ * itoa- esta función convierte un numero a un caracter tipo char
+ * @n: numero
+ * @str: puntero donde se guardara el numero convertido en char
+ */
+void itoa(int n, char *str)
+{
+	char num;
+
+	if (n < 0)
+	{
+		str[strlen(str) + 1] = '\0';
+		str[strlen(str)] = '-';
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		itoa(n / 10, str);
+		n %= 10;
+	}
+	num = '0' + n;
+	str[strlen(str) + 1] = '\0';
+	str[strlen(str)] = num;
+}

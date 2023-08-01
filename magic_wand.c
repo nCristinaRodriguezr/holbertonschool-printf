@@ -55,6 +55,8 @@ fun *get_struct(void)
 		{"c", datac},
 		{"s", datas},
 		{"%", datap},
+		{"d", data_d_i},
+		{"i", data_d_i},
 		{NULL, NULL}
 	};
 	return (datos);
