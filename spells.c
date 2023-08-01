@@ -72,7 +72,7 @@ void itoa(int n, char *str)
 	{
 		n = -n;
 	}
-	if (n >= 10)
+	if (n <= -10)
 	{
 		itoa(n / 10, str);
 		n %= 10;
