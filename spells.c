@@ -52,6 +52,11 @@ void data_d_i(va_list arguments, char *str)
 {
 	int n = va_arg(arguments, int);
 
+	if (n < 0)
+	{
+		str[strlen(str) + 1] = '\0';
+		str[strlen(str)] = '-';
+	}
 	itoa(n, str);
 }
 /**
@@ -63,16 +68,18 @@ void itoa(int n, char *str)
 {
 	char num;
 
-	if (n < 0)
+	if (n > 0)
 	{
-		str[strlen(str) + 1] = '\0';
-		str[strlen(str)] = '-';
 		n = -n;
 	}
 	if (n >= 10)
 	{
 		itoa(n / 10, str);
 		n %= 10;
+	}
+	if (n < 0)
+	{
+		n = -n;
 	}
 	num = '0' + n;
 	str[strlen(str) + 1] = '\0';
