@@ -1,0 +1,34 @@
+MANUAL _PRINFT
+ ### Name:
+_printf - format and print data.
+
+### Synopsis:
+_printf FOTMAT POINTER [VARIABLES ARGUMENTS ]...
+_printf OPTION
+
+### Description:
+_Printf uses ARGUMENT(S) depending on the type of OPTION.
+Variable widths are handled.
+The specifiers I can interpret are the following:
+
+ - **%c :** Specifier for a char data type, print letters or symbols.
+ - **%s :** Specifier for a pointer data type, prints a text string.
+ - **%d or %i:** Specifier for a number data type, imprime un número entero en base decimal.
+ - **%% :** Prints a single percent character (%).
+ 
+### Mistakes:
+ - format == NULL
+ - format[0] == '%'
+ - format[1] == '\0'
+ 
+ If any of the above errors occur _printf returns -1.
+ 
+ ### Reporting bugs:
+ https://www.holbertoncolombia.com/
+ 
+### Copyright:
+
+Better not copy yourself.
+
+### Author:
+Written by Nataly Cristina Rodriguez Rojas.
